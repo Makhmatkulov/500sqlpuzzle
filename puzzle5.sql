@@ -46,5 +46,3 @@ CROSS JOIN PQ typedData
 WHERE nameData.ID = typedData.ID 
   AND nameData.Name IS NOT NULL
   AND typedData.Typed IS NOT NULL;
-
-
