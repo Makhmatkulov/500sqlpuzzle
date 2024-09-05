@@ -28,11 +28,18 @@ SELECT MName , AName , Roles FROM Movie
 
 --solution1
 
-select * 
-from Movie 
-where MName in
-(select MName 
-from Movie 
-where Roles = 'Actor' and (AName = 'Amitabh' or AName = 'Vinod')
-group by MName 
-having count(MName)>1)
+
+
+SELECT * 
+FROM Movie 
+WHERE MName IN (
+    SELECT MName 
+    FROM Movie 
+    WHERE Roles = 'Actor' AND AName = 'Amitabh'
+)
+AND MName IN (
+    SELECT MName 
+    FROM Movie 
+    WHERE Roles = 'Actor' AND AName = 'Vinod'
+);
+
